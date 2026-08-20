@@ -86,7 +86,7 @@ export default function Hero() {
           className="mb-8 flex justify-center"
         >
           <img
-            src="/logo.png"
+            src="/pennine logo.png"
             alt="Pennine Property Partners"
             className="h-28 md:h-36 lg:h-44 w-auto drop-shadow-2xl"
           />
