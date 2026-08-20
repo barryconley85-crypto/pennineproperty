@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-sans text-gray-800 antialiased;
+    margin: 0;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display;
+  }
+  #root {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    text-align: left;
+    border: none;
+    min-height: 100svh;
+    display: block;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-gold-400 text-navy-900 font-semibold px-8 py-4 rounded-full shadow-gold hover:bg-gold-300 hover:shadow-lg transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-gold-400/40;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 border-2 border-white text-white font-semibold px-8 py-4 rounded-full hover:bg-white hover:text-navy-800 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-white/40;
+  }
+  .btn-navy {
+    @apply inline-flex items-center gap-2 bg-navy-800 text-white font-semibold px-8 py-4 rounded-full shadow-navy hover:bg-navy-700 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-navy-800/40;
+  }
+  .section-heading {
+    @apply font-display text-4xl md:text-5xl font-bold text-navy-800 leading-tight;
+  }
+  .gold-label {
+    @apply inline-block text-gold-500 font-semibold text-sm tracking-widest uppercase mb-3;
+  }
+  .card {
+    @apply bg-white rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-500 overflow-hidden;
+  }
+  .glass-card {
+    @apply bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl;
+  }
+  .section-padding {
+    @apply py-20 md:py-28;
+  }
+  .container-max {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+@layer utilities {
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #C9A96E 0%, #ecc870 50%, #C9A96E 100%);
+  }
+  .bg-hero {
+    background: linear-gradient(135deg, #060d18 0%, #0d1a30 40%, #1B2A4A 70%, #162d5a 100%);
+  }
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: #1B2A4A; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #C9A96E; }
+::selection { background: #C9A96E; color: #0d1a30; }
