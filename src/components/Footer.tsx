@@ -47,7 +47,7 @@ export default function Footer() {
           {/* Brand column */}
           <div className="lg:col-span-2">
             <img
-              src="/logo.png"
+              src="/pennine logo.png"
               alt="Pennine Property Partners"
               className="h-16 w-auto mb-6"
             />
