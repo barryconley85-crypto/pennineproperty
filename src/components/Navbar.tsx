@@ -42,19 +42,7 @@ export default function Navbar() {
         }`}
       >
         <div className="container-max flex items-center justify-between">
-          {/* Logo */}
-          <a
-            href="#hero"
-            onClick={(e) => { e.preventDefault(); handleNavClick('#hero'); }}
-            className="flex-shrink-0"
-          >
-            <img
-              src="/logo.png"
-              alt="Pennine Property Partners"
-              className="h-12 md:h-14 w-auto"
-            />
-          </a>
-
+          
           {/* Desktop Nav */}
           <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
