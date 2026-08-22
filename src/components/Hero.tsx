@@ -88,7 +88,7 @@ export default function Hero() {
           <img
             src="/pennine logo.png"
             alt="Pennine Property Partners"
-            className="h-28 md:h-36 lg:h-44 w-auto drop-shadow-2xl"
+            className="h-20 max-w-[78vw] w-auto rounded-xl border border-gold-300/30 shadow-[0_14px_40px_rgba(0,0,0,0.42)] md:h-24 lg:h-28"
           />
         </motion.div>
 
