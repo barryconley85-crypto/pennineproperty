@@ -1,31 +1,37 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Calendar } from 'lucide-react';
+import { ArrowRight, Calendar, ExternalLink } from 'lucide-react';
 import { useInView } from '../hooks/useInView';
 
 const articles = [
   {
-    category: 'Market Update',
-    date: 'July 2026',
-    title: 'Greater Manchester Property Market: What Sellers Need to Know in 2026',
+    category: 'Official Market Data',
+    date: 'Updated August 2026',
+    source: 'Office for National Statistics',
+    title: 'Housing Prices and Rents in Manchester',
     excerpt:
-      'The North West property market continues to show resilience. We break down what the latest data means for homeowners considering a sale and investors looking for opportunities.',
-    readTime: '4 min read',
+      'Explore official local data on average house prices, rents, buyer types and affordability in Manchester.',
+    readTime: 'External resource',
+    url: 'https://www.ons.gov.uk/visualisations/housingpriceslocal/E08000003/',
   },
   {
-    category: 'Investor Guide',
-    date: 'June 2026',
-    title: 'Why Off-Market Properties Offer the Best Returns for Cash Buyers',
+    category: 'Official Buyer Guidance',
+    date: 'Government guidance',
+    source: 'GOV.UK',
+    title: 'Buying and Owning a Property',
     excerpt:
-      'Off-market deals consistently outperform open-market purchases for cash investors. Here\'s why — and how to access them through a trusted sourcing partner.',
-    readTime: '5 min read',
+      'A GOV.UK guide covering buying, owning, registering and selling property, including key checks and tax information.',
+    readTime: 'External resource',
+    url: 'https://www.gov.uk/browse/housing-local-services/buying-owning-property',
   },
   {
-    category: 'Homeowner Advice',
-    date: 'June 2026',
-    title: 'Selling a Probate Property: A Step-by-Step Guide for Executors',
+    category: 'Probate Guidance',
+    date: 'Government guidance',
+    source: 'GOV.UK',
+    title: "Dealing with the Estate of Someone Who's Died",
     excerpt:
-      'Navigating a probate sale can feel overwhelming. Our guide explains the process clearly and explores how a quick sale to an investor can simplify everything.',
-    readTime: '6 min read',
+      'Official guidance for executors and administrators, including dealing with estate assets such as property.',
+    readTime: 'External resource',
+    url: 'https://www.gov.uk/probate-estate',
   },
 ];
 
@@ -43,29 +49,33 @@ export default function LatestNews() {
           className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12"
         >
           <div>
-            <p className="gold-label">Insights</p>
-            <h2 className="section-heading">Latest Property News</h2>
+            <p className="gold-label">Trusted Resources</p>
+            <h2 className="section-heading">Property News & Guidance</h2>
           </div>
           <a
-            href="#contact"
-            onClick={(e) => { e.preventDefault(); document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' }); }}
+            href="https://www.gov.uk/browse/housing-local-services/buying-owning-property"
+            target="_blank"
+            rel="noreferrer"
             className="text-navy-800 font-semibold text-sm flex items-center gap-2 hover:text-gold-500 transition-colors"
           >
-            View all articles <ArrowRight size={16} />
+            Explore official guidance <ExternalLink size={16} />
           </a>
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-8">
           {articles.map((article, i) => (
-            <motion.article
+            <motion.a
               key={article.title}
+              href={article.url}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={`Open ${article.title} from ${article.source} in a new tab`}
               initial={{ opacity: 0, y: 40 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: i * 0.15 }}
               whileHover={{ y: -6 }}
-              className="card group cursor-pointer"
+              className="card group block cursor-pointer focus:outline-none focus:ring-2 focus:ring-gold-400 focus:ring-offset-2"
             >
-              {/* Category header */}
               <div className="h-3 bg-gradient-to-r from-navy-800 to-navy-700 group-hover:from-gold-400 group-hover:to-gold-300 transition-all duration-500" />
 
               <div className="p-6">
@@ -86,13 +96,13 @@ export default function LatestNews() {
                 <p className="text-gray-600 text-sm leading-relaxed mb-4">{article.excerpt}</p>
 
                 <div className="flex items-center justify-between border-t border-gray-100 pt-4">
-                  <span className="text-xs text-gray-400">{article.readTime}</span>
+                  <span className="text-xs text-gray-400">Source: {article.source}</span>
                   <span className="text-navy-800 group-hover:text-gold-500 transition-colors text-sm font-semibold flex items-center gap-1">
-                    Read more <ArrowRight size={14} />
+                    Open source <ArrowRight size={14} />
                   </span>
                 </div>
               </div>
-            </motion.article>
+            </motion.a>
           ))}
         </div>
       </div>
