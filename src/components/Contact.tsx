@@ -10,6 +10,7 @@ interface FormData {
   phone: string;
   enquiryType: string;
   message: string;
+  website: string;
 }
 
 const initialForm: FormData = {
@@ -19,26 +20,52 @@ const initialForm: FormData = {
   phone: '',
   enquiryType: '',
   message: '',
+  website: '',
 };
 
 export default function Contact() {
   const [form, setForm] = useState<FormData>(initialForm);
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [submitError, setSubmitError] = useState('');
   const { ref, inView } = useInView();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    // Simulate submission
-    setTimeout(() => {
-      setLoading(false);
+    setSubmitError('');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+
+      const result = (await response.json().catch(() => null)) as {
+        success?: boolean;
+        error?: string;
+      } | null;
+
+      if (!response.ok || !result?.success) {
+        throw new Error(result?.error || 'We could not send your enquiry. Please try again.');
+      }
+
       setSubmitted(true);
-    }, 1500);
+      setForm(initialForm);
+    } catch (error) {
+      setSubmitError(
+        error instanceof Error
+          ? error.message
+          : 'We could not send your enquiry. Please call 07533 849609 instead.',
+      );
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -188,7 +215,20 @@ export default function Contact() {
               <form
                 onSubmit={handleSubmit}
                 className="glass-card p-8 space-y-5"
+                aria-busy={loading}
               >
+                <div className="absolute -left-[10000px]" aria-hidden="true">
+                  <label htmlFor="website">Leave this field blank</label>
+                  <input
+                    id="website"
+                    name="website"
+                    type="text"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    value={form.website}
+                    onChange={handleChange}
+                  />
+                </div>
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="firstName" className="block text-white/70 text-sm font-medium mb-2">
@@ -288,6 +328,15 @@ export default function Contact() {
                     placeholder="Tell us about your property, your situation and what you're looking for..."
                   />
                 </div>
+
+                {submitError && (
+                  <p
+                    role="alert"
+                    className="rounded-xl border border-red-300/50 bg-red-500/10 px-4 py-3 text-sm text-red-100"
+                  >
+                    {submitError}
+                  </p>
+                )}
 
                 <motion.button
                   type="submit"
