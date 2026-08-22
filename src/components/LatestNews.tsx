@@ -14,14 +14,14 @@ const articles = [
     url: 'https://www.ons.gov.uk/visualisations/housingpriceslocal/E08000003/',
   },
   {
-    category: 'Official Buyer Guidance',
-    date: 'Government guidance',
-    source: 'GOV.UK',
-    title: 'Buying and Owning a Property',
+    category: 'Investor Due Diligence',
+    date: 'Government service',
+    source: 'HM Land Registry',
+    title: 'Search for Land and Property Information',
     excerpt:
-      'A GOV.UK guide covering buying, owning, registering and selling property, including key checks and tax information.',
+      'Check a property’s title, ownership, mortgage information, restrictive covenants and easements before committing to a purchase.',
     readTime: 'External resource',
-    url: 'https://www.gov.uk/browse/housing-local-services/buying-owning-property',
+    url: 'https://www.gov.uk/search-property-information-land-registry',
   },
   {
     category: 'Probate Guidance',
