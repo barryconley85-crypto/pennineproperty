@@ -14,7 +14,7 @@ export default function HowWeHelp() {
         'Whether you\'re relocating, going through probate, facing financial pressure, or simply need a fast, certain sale — we connect you directly with our trusted network of cash buyers. No estate agents, no chains, no delays.',
       points: [
         'Receive an offer within 48 hours',
-        'Complete in as little as 2–4 weeks',
+        'Contracts exchanged within 8 weeks',
         'No fees, no hidden costs',
         'Completely stress-free process',
       ],
