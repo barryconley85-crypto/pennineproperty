@@ -6,7 +6,7 @@ import { useInView } from '../hooks/useInView';
 const faqs = [
   {
     q: 'How quickly can you sell my property?',
-    a: 'In most cases, we can present your property to investors within 24–48 hours of your enquiry and receive offers shortly after. Once you accept an offer, completion typically takes 2–4 weeks, though we have completed sales in as little as 7 days for urgent situations.',
+    a: 'In most cases, we can present your property to investors within 24–48 hours of your enquiry and receive offers shortly after. Contracts are typically exchanged within 8 weeks, and we have completed sales in as little as 28 days for urgent situations.',
   },
   {
     q: 'Will I get full market value for my property?',
