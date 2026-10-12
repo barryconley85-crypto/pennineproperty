@@ -30,7 +30,7 @@ const faqs = [
   },
   {
     q: 'Are you regulated?',
-    a: 'Pennine Property Partners Ltd operates as a property sourcing and introduction business. We handle personal data in accordance with GDPR, hold Anti-Money Laundering (AML) certificates, and are registered with the Property Redress Scheme (Ombudsman Services). We recommend that all parties involved in any transaction seek independent legal and financial advice. We always act with full transparency and in the best interests of all parties.',
+    a: 'Pennine Property Partners Ltd operates as a property sourcing and introduction business. We handle personal data in accordance with GDPR, hold Anti-Money Laundering (AML) certificates, and are registered with the Property Redress Scheme (Ombudsman Services). We can provide further details of our compliance arrangements on request. We recommend that all parties involved in any transaction seek independent legal and financial advice. We always act with full transparency and in the best interests of all parties.',
   },
   {
     q: 'Which areas do you cover?',
