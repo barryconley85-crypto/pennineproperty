@@ -166,13 +166,12 @@ export default function Hero() {
           className="mt-16 grid grid-cols-3 gap-4 max-w-2xl mx-auto"
         >
           {[
-            { value: '100+', label: 'Properties Sold' },
-            { value: '48hrs', label: 'Average Offer Time' },
-            { value: '5★', label: 'Client Satisfaction' },
+            'Response within 24 hours',
+            'Deep Local Connections',
+            'Investors and Sellers Already Onboard',
           ].map((stat) => (
-            <div key={stat.label} className="glass-card p-4 text-center">
-              <div className="font-display text-2xl md:text-3xl font-bold text-gold-400">{stat.value}</div>
-              <div className="text-white/60 text-xs md:text-sm mt-1">{stat.label}</div>
+            <div key={stat} className="glass-card p-4 min-h-28 flex items-center justify-center text-center">
+              <div className="font-display text-lg md:text-xl lg:text-2xl font-bold text-gold-400 leading-snug">{stat}</div>
             </div>
           ))}
         </motion.div>
