@@ -103,7 +103,7 @@ export default function WhyChooseUs() {
               className="text-center p-6 rounded-2xl bg-navy-800 text-white"
             >
               <div className="font-display text-4xl md:text-5xl font-bold text-gold-400 mb-2">
-                <AnimatedCounter target={stat.value} suffix={stat.suffix} />
+                {stat.value === 0 ? stat.label : <AnimatedCounter target={stat.value} suffix={stat.suffix} />}
               </div>
               <div className="text-white/70 text-sm font-medium">{stat.label}</div>
             </div>
