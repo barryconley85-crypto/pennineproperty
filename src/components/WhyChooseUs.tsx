@@ -61,9 +61,9 @@ const features = [
 ];
 
 const stats = [
-  { value: 100, suffix: '+', label: 'Properties Sold' },
+  { value: 0, suffix: '', label: 'All Properties Considered' },
   { value: 48, suffix: 'hrs', label: 'Average Offer Time' },
-  { value: 98, suffix: '%', label: 'Completion Rate' },
+  { value: 0, suffix: '', label: 'Exchange Within 8 Weeks' },
   { value: 5, suffix: '★', label: 'Client Rating' },
 ];
 
