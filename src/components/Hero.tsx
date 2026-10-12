@@ -99,7 +99,7 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="text-gold-400 font-semibold text-sm md:text-base tracking-[0.3em] uppercase mb-6"
         >
-          Manchester &amp; Greater Manchester
+          Stockport and Manchester
         </motion.p>
 
         {/* Headline */}
