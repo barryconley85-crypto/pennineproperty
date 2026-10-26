@@ -1,5 +1,5 @@
 const RESEND_ENDPOINT = 'https://api.resend.com/emails';
-const TEMPORARY_RECIPIENT = 'barryconley85@gmail.com';
+const TEMPORARY_RECIPIENT = 'adam@penninepropertypartners.co.uk, laura@penninepropertypartners.co.uk';
 const ENQUIRY_TYPES = new Set(['homeowner', 'investor', 'landlord', 'other']);
 
 interface ContactPayload {
